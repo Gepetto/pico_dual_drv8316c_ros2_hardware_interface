@@ -70,25 +70,6 @@ for `odri_dual_motor_testbed`, include this macro from
 interfaces match, so `odri_dual_motor_testbed_bringup`'s existing controllers
 config keeps working.
 
-### Stand-alone bench test
-
-A minimal two-joint test URDF and launch file are included, independent of
-`odri_dual_motor_testbed_description`:
-
-```bash
-ros2 launch pico_dual_drv8316c_ros2_hardware_interface pico_dual_drv8316c.launch.py serial_port:=/dev/ttyACM0
-```
-
-This starts `robot_state_publisher` and `ros2_control_node`, then spawns
-`joint_state_broadcaster` and `odri_forward_command_controller`. Command it
-with, e.g.:
-
-```bash
-ros2 topic pub -1 /odri_forward_command_controller/commands ...
-```
-
-(see `odri_forward_command_controller`'s own documentation for the exact
-message type and field order).
 
 ## Startup / shutdown behavior
 
