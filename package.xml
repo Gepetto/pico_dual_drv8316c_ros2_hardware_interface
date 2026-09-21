@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>pico_dual_drv8316c_ros2_hardware_interface</name>
+  <version>0.1.0</version>
+  <description>
+    ros2_control SystemInterface hardware plugin that drives a dual-motor
+    testbed through the Raspberry Pi Pico USB-CDC binary protocol implemented
+    by pico_dual_PMSM_BUG79100G_DRV8316C (dual BUG79100G encoder + DRV8316C
+    driver board).
+  </description>
+  <maintainer email="olivier.stasse@laas.fr">Olivier Stasse</maintainer>
+  <author>Olivier Stasse</author>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- keep-sorted start -->
+  <depend>hardware_interface</depend>
+  <depend>pluginlib</depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_lifecycle</depend>
+  <depend>ros2_control_cmake</depend>
+  <!-- keep-sorted end -->
+
+  <!-- Used only by the example bring-up launch file in bringup/ -->
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>joint_state_broadcaster</exec_depend>
+  <exec_depend>odri_forward_command_controller</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <!-- keep-sorted start -->
+  <test_depend>ament_cmake_copyright</test_depend>
+  <test_depend>ament_cmake_cppcheck</test_depend>
+  <test_depend>ament_cmake_cpplint</test_depend>
+  <test_depend>ament_cmake_gtest</test_depend>
+  <test_depend>ament_cmake_lint_cmake</test_depend>
+  <test_depend>ament_cmake_xmllint</test_depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+  <!-- keep-sorted end -->
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
